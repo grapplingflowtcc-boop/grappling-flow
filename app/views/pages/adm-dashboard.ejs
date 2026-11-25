@@ -1,0 +1,26 @@
+<%- include('../partials/head', {titulo: 'Visão geral', css: 'adm', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Visão geral'}) %>
+<%- include('../partials/' + 'menu-adm', {atual: 'dashboard'}) %>
+  <main class="painel">
+    <section><h2>Olá, <span>Daniel Alvez</span>!</h2><p class="muted">Aqui está o resumo da sua academia hoje.</p></section>
+    <section class="grade-cards" aria-label="Indicadores">
+      <article class="cartao"><p class="muted">Presença hoje</p><p class="numero">86%</p></article>
+      <article class="cartao"><p class="muted">Receita mensal</p><p class="numero">R$ 35.180,00</p></article>
+      <article class="cartao"><p class="muted">Alunos com mensalidade em atraso</p><p class="numero">4</p></article>
+      <article class="cartao"><p class="muted">Alunos ativos</p><p class="numero">248</p></article></section>
+    <section class="cartao" aria-labelledby="t-fr"><h3 id="t-fr">Frequência dos alunos</h3>
+      <div class="freq" role="img" aria-label="Frequência por dia: segunda 58, terça 78, quarta 52, quinta 68, sexta 92, sábado 74 alunos">
+        <div><span style="height:58%"></span>Seg</div><div><span style="height:78%"></span>Ter</div><div><span style="height:52%"></span>Qua</div><div><span style="height:68%"></span>Qui</div><div><span style="height:92%"></span>Sex</div><div><span style="height:74%"></span>Sáb</div></div></section>
+    <section class="cartao" aria-labelledby="t-pt"><h3 id="t-pt">Próximos treinos</h3>
+      <ul class="lista-treinos"><li><strong>07:00</strong><span>Muay Thai · Todos os níveis</span></li><li><strong>10:00</strong><span>Jiu-Jitsu · Iniciante</span></li><li><strong>18:00</strong><span>Boxe · Intermediário</span></li><li><strong>20:00</strong><span>Jiu-Jitsu · Avançado</span></li></ul></section>
+    <section class="cartao" aria-labelledby="t-al"><h3 id="t-al">Alunos recentes</h3>
+      <div class="tabela-wrap"><table><thead><tr><th scope="col">Aluno</th><th scope="col">Graduação</th><th scope="col">Presença</th></tr></thead>
+      <tbody><tr><td>Bruno Costa</td><td>Faixa branca</td><td>94%</td></tr><tr><td>Paulo Dias</td><td>Faixa azul</td><td>88%</td></tr><tr><td>Lia Melo</td><td>Faixa branca</td><td>81%</td></tr><tr><td>Ana Reis</td><td>Faixa roxa</td><td>97%</td></tr></tbody></table></div></section>
+    <section class="cartao" aria-labelledby="t-sm"><h3 id="t-sm">Treinos semanais</h3>
+      <div class="tabela-wrap"><table class="larga"><thead><tr><th scope="col">Horário</th><th scope="col">Seg</th><th scope="col">Ter</th><th scope="col">Qua</th><th scope="col">Qui</th><th scope="col">Sex</th><th scope="col">Sáb</th></tr></thead>
+      <tbody><tr><th scope="row">09h</th><td>Jiu-Jitsu</td><td>Jiu-Jitsu</td><td>Muay Thai</td><td>Boxe</td><td>Muay Thai</td><td>—</td></tr><tr><th scope="row">12h</th><td>—</td><td>Muay Thai</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><th scope="row">18h</th><td>Muay Thai</td><td>Boxe</td><td>Jiu-Jitsu</td><td>Muay Thai</td><td>Jiu-Jitsu</td><td>—</td></tr><tr><th scope="row">21h</th><td>Boxe</td><td>Jiu-Jitsu</td><td>—</td><td>—</td><td>Jiu-Jitsu</td><td>—</td></tr></tbody></table></div></section>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>

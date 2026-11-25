@@ -1,0 +1,144 @@
+<%- include('../partials/head', {titulo: 'Treine. Supere. Evolua.', css: 'home'}) %>
+<body>
+  <header class="cabecalho">
+    <a class="logo" href="/"><img src="/imagem/logo.png" alt="">GRAPPLING <span>FLOW</span></a>
+    <nav aria-label="Conta">
+      <a class="botao botao-contorno" href="/login">Login</a>
+      <a class="botao" href="/cadastro">Cadastre-se</a>
+    </nav>
+    <button class="hamb" type="button" data-menu-toggle aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </header>
+  <aside id="menu" class="drawer" aria-label="Menu">
+    <a class="logo" href="/"><img src="/imagem/logo.png" alt="">GRAPPLING <span>FLOW</span></a>
+    <nav aria-label="Menu principal">
+      <a href="/">Início</a>
+      <a href="#modalidades">Modalidades</a>
+      <a href="#horarios">Horários</a>
+      <a href="/login">Login</a>
+      <a href="/cadastro">Cadastre-se</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="hero-conteudo">
+        <p class="hero-tag">FORÇA • DISCIPLINA • EVOLUÇÃO</p>
+        <h1>TREINE.<br>SUPERE.<br><span class="vermelho">EVOLUA.</span></h1>
+        <div class="hero-botoes">
+          <a class="botao" href="/cadastro">Agendar aula grátis</a>
+          <a class="botao botao-contorno" href="#horarios">Ver horários</a>
+        </div>
+      </div>
+    </section>
+
+    <ul class="estatisticas">
+      <li><strong>18 ANOS</strong><span>De história</span></li>
+      <li><strong>1200+</strong><span>Alunos formados</span></li>
+      <li><strong>32+</strong><span>Turmas por semana</span></li>
+    </ul>
+
+    <section class="secao" id="modalidades">
+      <div class="container">
+        <h2>Nossas<br>modalidades</h2>
+        <ul class="modalidades">
+          <li><a class="modalidade muay-thai" href="/cadastro"><h3>Muay Thai</h3><p>Força &amp; resistência</p></a></li>
+          <li><a class="modalidade jiu-jitsu" href="/cadastro"><h3>Jiu-Jitsu</h3><p>Técnica &amp; estratégia</p></a></li>
+          <li><a class="modalidade boxe" href="/cadastro"><h3>Boxe</h3><p>Velocidade &amp; precisão</p></a></li>
+          <li><a class="modalidade karate" href="/cadastro"><h3>Karatê</h3><p>Foco &amp; disciplina</p></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" id="horarios">
+      <div class="container">
+        <h2>Horários</h2>
+        <p class="descricao">32 turmas por semana, de manhã à noite. Escolha a que cabe na sua rotina.</p>
+
+        <div class="tabela">
+          <table>
+            <caption class="so-leitor">Grade semanal de aulas</caption>
+            <thead>
+              <tr>
+                <th scope="col">Horários</th>
+                <th scope="col">Seg</th>
+                <th scope="col">Terça</th>
+                <th scope="col">Qua</th>
+                <th scope="col">Qui</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Sáb</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">07h</th>
+                <td>Muay-Thai</td><td>Boxe</td><td>Muay-Thai</td><td>Boxe</td><td>Jiu-Jitsu</td><td class="vazio">—</td>
+              </tr>
+              <tr>
+                <th scope="row">12h</th>
+                <td>Jiu-Jitsu</td><td>Karatê</td><td>Jiu-Jitsu</td><td>Karatê</td><td>Boxe</td><td class="vazio">—</td>
+              </tr>
+              <tr>
+                <th scope="row">18h</th>
+                <td class="destaque">Jiu-Jitsu</td><td class="destaque">Muay-Thai</td><td class="destaque">Jiu-Jitsu</td><td class="destaque">Muay-Thai</td><td>Karatê</td><td class="vazio">—</td>
+              </tr>
+              <tr>
+                <th scope="row">20h</th>
+                <td>Boxe</td><td>Jiu-Jitsu</td><td>Boxe</td><td>Jiu-Jitsu</td><td>Sparring Livre</td><td class="vazio">—</td>
+              </tr>
+              <tr>
+                <th scope="row">10h</th>
+                <td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="chamada">
+      <h2>Sua primeira aula é grátis</h2>
+      <p>Escolha a modalidade, venha de roupa de treino e a gente empresta o kimono. Sem compromisso.</p>
+      <a class="botao botao-preto" href="/cadastro">Agendar aula grátis</a>
+      <small>Resposta em até 1 dia útil pelo WhatsApp.</small>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape-colunas">
+        <div class="rodape-marca">
+          <a class="logo" href="/"><img src="/imagem/logo.png" alt="">GRAPPLING <span>FLOW</span></a>
+          <p>Artes marciais, disciplina e evolução desde 2008.</p>
+        </div>
+        <div>
+          <h3>Modalidades</h3>
+          <ul>
+            <li><a href="/cadastro">Muay-Thai</a></li>
+            <li><a href="/cadastro">Jiu-Jitsu</a></li>
+            <li><a href="/cadastro">Boxe</a></li>
+            <li><a href="/cadastro">Karatê</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>Rua Exemplo, 123 – Cidade-UF</li>
+            <li><a href="#">WhatsApp</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Academia</h3>
+          <ul>
+            <li><a href="#horarios">Horários</a></li>
+            <li><a href="#">Professores</a></li>
+            <li><a href="#">Departamentos</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Grappling Flow. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+<%- include('../partials/scripts') %>
+</body>
+</html>

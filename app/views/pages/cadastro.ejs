@@ -1,0 +1,74 @@
+<%- include('../partials/head', {titulo: 'Cadastro', css: 'auth'}) %>
+<% const d = dados || {}; const adm = d.tipo === 'adm'; %>
+<body>
+  <main class="auth">
+    <a class="voltar" href="/">← Voltar para o início</a>
+
+    <section class="auth-foto foto-cadastro">
+      <h2>Seu jogo.<br>Seu ritmo.<br>Seu <span class="vermelho">Flow.</span></h2>
+      <p>Treine. Evolua. Domine.</p>
+      <ul><li>Performance</li><li>Training</li><li>Discipline</li><li>Evolution</li></ul>
+    </section>
+
+    <section class="auth-form">
+      <div class="auth-conteudo">
+        <a class="logo" href="/"><img src="/imagem/logo.png" alt="">GRAPPLING <span>FLOW</span></a>
+        <h1>Crie sua conta</h1>
+        <p class="subtitulo">Comece sua jornada e leve seu treinamento para o próximo nível.</p>
+
+        <% if (erros && erros.length) { %><div class="alerta alerta--erro" role="alert"><ul><% erros.forEach(function (m) { %><li><%= m %></li><% }) %></ul></div><% } %>
+
+        <form action="/cadastro" method="post" data-validar novalidate>
+          <p class="tipo-titulo">Tipo de conta</p>
+          <div class="tipo">
+            <label><input type="radio" name="tipo" value="aluno" <%= adm ? '' : 'checked' %>> Aluno</label>
+            <label><input type="radio" name="tipo" value="adm" <%= adm ? 'checked' : '' %>> Administrador</label>
+          </div>
+
+          <label for="nome">Nome completo</label>
+          <div class="campo"><input id="nome" name="nome" type="text" placeholder="Digite seu nome" autocomplete="name" value="<%= d.nome || '' %>" data-regra="nome"></div>
+          <p class="erro" id="nome-erro" aria-live="polite"></p>
+
+          <label for="email">E-mail</label>
+          <div class="campo"><input id="email" name="email" type="email" placeholder="seu@email.com" autocomplete="email" value="<%= d.email || '' %>" data-regra="email"></div>
+          <p class="erro" id="email-erro" aria-live="polite"></p>
+
+          <label for="senha">Senha</label>
+          <div class="campo">
+            <input id="senha" name="senha" type="password" placeholder="Crie uma senha" autocomplete="new-password" data-regra="senha" data-forca>
+            <button type="button" data-mostrar-senha="senha" aria-label="Mostrar senha">👁</button>
+          </div>
+          <p class="erro" id="senha-erro" aria-live="polite"></p>
+
+          <label for="senha2">Confirmar senha</label>
+          <div class="campo">
+            <input id="senha2" name="confirmar" type="password" placeholder="Digite sua senha novamente" autocomplete="new-password" data-regra="confirmar">
+            <button type="button" data-mostrar-senha="senha2" aria-label="Mostrar senha">👁</button>
+          </div>
+          <p class="erro" id="senha2-erro" aria-live="polite"></p>
+
+          <div class="forca" id="forca"><i></i><i></i><i></i><i></i></div>
+          <p class="forca-texto" id="forca-texto">Força: —</p>
+
+          <div id="grupo-codigo" <%= adm ? '' : 'hidden' %>>
+            <label for="codigo">Código da academia</label>
+            <div class="campo"><input id="codigo" name="codigo" type="text" placeholder="Fornecido pela direção" data-regra="codigo"></div>
+            <p class="erro" id="codigo-erro" aria-live="polite"></p>
+          </div>
+
+          <label class="termos" for="termos">
+            <input type="checkbox" id="termos" name="termos" data-regra="termos">
+            <span>Li e aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></span>
+          </label>
+          <p class="erro" id="termos-erro" aria-live="polite"></p>
+
+          <button class="botao-form" type="submit">Criar minha conta</button>
+        </form>
+
+        <p class="auth-link">Já possui uma conta? <a href="/login">Entrar</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="/js/validacao.js"></script>
+</body>
+</html>

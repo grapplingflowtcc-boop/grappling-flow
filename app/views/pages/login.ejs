@@ -1,0 +1,49 @@
+<%- include('../partials/head', {titulo: 'Entrar', css: 'auth'}) %>
+<% const d = dados || {}; %>
+<body>
+  <main class="auth">
+    <a class="voltar" href="/">← Voltar para o início</a>
+
+    <section class="auth-foto foto-login">
+      <h2>Seu jogo.<br>Seu ritmo.<br>Seu <span class="vermelho">Flow.</span></h2>
+      <p>Treine. Evolua. Domine.</p>
+      <ul><li>Performance</li><li>Training</li><li>Discipline</li><li>Evolution</li></ul>
+    </section>
+
+    <section class="auth-form">
+      <div class="auth-conteudo">
+        <a class="logo" href="/"><img src="/imagem/logo.png" alt="">GRAPPLING <span>FLOW</span></a>
+        <h1>Entre na sua conta</h1>
+        <p class="subtitulo">Escolha como você quer entrar.</p>
+
+        <% if (cadastrado) { %><p class="alerta alerta--ok" role="status">Cadastro realizado! Entre com seu e-mail e senha.</p><% } %>
+        <% if (erros && erros.length) { %><div class="alerta alerta--erro" role="alert"><ul><% erros.forEach(function (m) { %><li><%= m %></li><% }) %></ul></div><% } %>
+
+        <form action="/login" method="post" data-validar novalidate>
+          <p class="tipo-titulo">Entrar como</p>
+          <div class="tipo">
+            <label><input type="radio" name="tipo" value="aluno" <%= tipo === 'adm' ? '' : 'checked' %>> Aluno</label>
+            <label><input type="radio" name="tipo" value="adm" <%= tipo === 'adm' ? 'checked' : '' %>> Administrador</label>
+          </div>
+
+          <label for="email">E-mail</label>
+          <div class="campo"><input id="email" name="email" type="email" placeholder="seu@email.com" autocomplete="email" value="<%= d.email || '' %>" data-regra="email"></div>
+          <p class="erro" id="email-erro" aria-live="polite"></p>
+
+          <label for="senha">Senha</label>
+          <div class="campo">
+            <input id="senha" name="senha" type="password" placeholder="Digite sua senha" autocomplete="current-password" data-regra="senhaLogin">
+            <button type="button" data-mostrar-senha="senha" aria-label="Mostrar senha">👁</button>
+          </div>
+          <p class="erro" id="senha-erro" aria-live="polite"></p>
+
+          <button class="botao-form" type="submit">Entrar</button>
+        </form>
+
+        <p class="auth-link">Ainda não tem conta? <a href="/cadastro">Cadastre-se</a></p>
+      </div>
+    </section>
+  </main>
+  <script src="/js/validacao.js"></script>
+</body>
+</html>

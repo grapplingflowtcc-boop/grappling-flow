@@ -1,0 +1,39 @@
+<%- include('../partials/head', {titulo: 'Check-in', css: 'aluno', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Check-in'}) %>
+<%- include('../partials/menu-aluno', {atual: 'checkin'}) %>
+  <main class="painel">
+    <section><h2>Fazer check-in</h2><p class="muted">Confirme sua presença na aula de hoje.</p></section>
+    <% if (ok) { %><p class="alerta alerta--ok" role="status">Check-in confirmado! Bom treino.</p><% } %>
+
+    <section class="grade-cards" aria-label="Resumo">
+      <article class="cartao"><p class="muted">Check-ins no mês</p><p class="numero">12</p></article>
+      <article class="cartao"><p class="muted">Sequência</p><p class="numero">3 dias</p></article>
+      <article class="cartao"><p class="muted">Frequência</p><p class="numero">86%</p></article>
+    </section>
+
+    <section class="cartao" aria-labelledby="t-hoje"><h3 id="t-hoje">Aulas de hoje</h3>
+      <ul class="aulas">
+        <li><strong>07:00</strong><span>Muay Thai · Todos os níveis</span>
+          <form action="/aluno/checkin" method="post"><input type="hidden" name="aula" value="muay-thai-07"><button class="botao" type="submit">Fazer check-in</button></form></li>
+        <li><strong>12:00</strong><span>Jiu-Jitsu · Intermediário</span>
+          <form action="/aluno/checkin" method="post"><input type="hidden" name="aula" value="jiu-jitsu-12"><button class="botao" type="submit">Fazer check-in</button></form></li>
+        <li><strong>18:00</strong><span>Jiu-Jitsu · Intermediário</span>
+          <form action="/aluno/checkin" method="post"><input type="hidden" name="aula" value="jiu-jitsu-18"><button class="botao" type="submit">Fazer check-in</button></form></li>
+        <li><strong>20:00</strong><span>Boxe · Iniciante</span>
+          <form action="/aluno/checkin" method="post"><input type="hidden" name="aula" value="boxe-20"><button class="botao" type="submit">Fazer check-in</button></form></li>
+      </ul></section>
+
+    <section class="cartao" aria-labelledby="t-hist"><h3 id="t-hist">Meus últimos check-ins</h3>
+      <div class="tabela-wrap"><table>
+        <thead><tr><th scope="col">Data</th><th scope="col">Aula</th><th scope="col">Horário</th></tr></thead>
+        <tbody>
+          <tr><td>17/11/2026</td><td>Jiu-Jitsu</td><td>18:00</td></tr>
+          <tr><td>16/11/2026</td><td>Jiu-Jitsu</td><td>18:00</td></tr>
+          <tr><td>13/11/2026</td><td>Boxe</td><td>20:00</td></tr>
+          <tr><td>12/11/2026</td><td>Jiu-Jitsu</td><td>18:00</td></tr>
+        </tbody></table></div></section>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>

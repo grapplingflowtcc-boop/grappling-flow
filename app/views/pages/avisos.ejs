@@ -1,0 +1,17 @@
+<%- include('../partials/head', {titulo: 'Avisos', css: 'aluno', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Avisos'}) %>
+<%- include('../partials/' + 'menu-' + perfil, {atual: 'avisos'}) %>
+  <main class="painel">
+    <h2 class="chamada-avisos">Fique por dentro de <em>todas as novidades!</em></h2>
+    <section class="cartao" aria-labelledby="t-mural"><h3 id="t-mural">Mural de avisos</h3>
+      <ul class="mural">
+        <li><h3>Feriado na academia</h3><p>Nos dias 15 e 17 de novembro não haverá aulas, devido às organizações para a graduação.</p><small>Há 2 dias</small></li>
+        <li><h3>Graduação</h3><p>Dias 18 e 20 de novembro acontece a última graduação do ano. Ocupação limitada.</p><small>Há 4 dias</small></li>
+        <li><h3>Férias</h3><p>A partir de 7 de dezembro começam as turmas de férias, com horários reduzidos.</p><small>Há 1 semana</small></li>
+        <li><h3>Campeonato</h3><p>Campeonato Brasileiro de Jiu-Jitsu: inscrições abertas até o fim do mês na recepção.</p><small>Há 2 semanas</small></li>
+      </ul></section>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>

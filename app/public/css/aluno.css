@@ -1,0 +1,63 @@
+.rotulo{font-size:11px;color:#e0161f}
+.rotulo::before{content:"";display:inline-block;width:18px;height:2px;margin-right:8px;vertical-align:middle;background:#e0161f}
+.saudacao{margin-top:4px;font-size:44px;line-height:1.05}
+.boas-vindas{font-size:13px;color:#999}
+.titulo-secao{margin-bottom:12px;font-size:28px}
+.colunas{display:grid;gap:24px}
+
+.evolucao{margin:16px 0 24px;overflow:hidden;border:1px solid #2e2e2e;border-radius:12px;background:#141414}
+.evolucao-texto{padding:100px 18px 18px;background:linear-gradient(180deg,rgba(10,10,10,.3),rgba(10,10,10,.92)),url(/imagem/jiu-jitsu.jpg) center/cover;font-size:13px;color:#ccc}
+.evolucao-texto h2{margin:2px 0 8px;font-size:38px;line-height:1;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.evolucao-rotulo{font-size:13px}
+.evolucao-progresso{padding:16px 18px;font-size:12px;color:#bbb}
+.evolucao-progresso strong{display:block;font-size:15px;color:#fff}
+.linha{display:flex;justify-content:space-between}
+.linha+.linha{margin-top:8px}
+
+.icone{display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(224,22,31,.15);font-size:15px}
+.cartoes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.cartoes li{display:flex;flex-direction:column;min-height:130px;padding:14px;border:1px solid #2e2e2e;border-radius:12px;background:linear-gradient(160deg,#2c2c2c,#1c1c1c);font-size:11px;color:#bbb;transition:transform .2s ease,border-color .2s ease}
+.cartoes li:hover{border-color:#e0161f;transform:translateY(-2px)}
+.cartoes .icone{margin-bottom:10px}
+.cartoes strong{margin:4px 0;font-size:17px;font-weight:500;color:#fff}
+.cartoes .detalhe{margin-top:auto;color:#e0161f}
+
+.evento{display:flex;gap:14px;margin-bottom:12px;padding:18px;border:1px solid #2e2e2e;border-radius:12px;background:linear-gradient(90deg,rgba(13,13,13,.95),rgba(13,13,13,.75)),url(/imagem/karate.jpg) center/cover}
+.evento-dia{display:grid;place-items:center;flex-shrink:0;width:52px;height:52px;border:3px solid #e0161f;font:28px 'Bebas Neue',Impact,sans-serif}
+.evento h3{margin:4px 0;font-size:22px}
+.evento p{font-size:12px;color:#aaa}
+.evento .evento-local{margin-top:10px;color:#fff}
+.etiqueta{padding:2px 8px;border-radius:99px;background:#5a1115;font-size:11px;color:#e0161f}
+.ver-detalhes{display:block;margin-bottom:28px;padding:12px;border:1px solid #2e2e2e;border-radius:8px;font-size:13px;text-align:center;transition:border-color .2s ease,background .2s ease}
+.ver-detalhes:hover{border-color:#e0161f;background:#e0161f}
+.aviso{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;padding:14px;border:1px solid #2e2e2e;border-radius:12px;background:#121212}
+.aviso h3{font:500 13px 'Inter',system-ui,sans-serif}
+.aviso p{font-size:12px;color:#9a9a9a}
+
+.perfil-id{display:flex;align-items:center;gap:16px;border-left:4px solid #e0161f}
+.faixa-azul{height:34px;margin:8px 0 14px;border-radius:6px;background:linear-gradient(90deg,#1a2a8c,#2f45e0)}
+.frase{border-left:4px solid #e0161f;font-size:18px}
+
+.aulas li{display:grid;grid-template-columns:60px 1fr;align-items:center;gap:8px 16px;padding:12px 0;border-bottom:1px solid #2e2e2e}
+.aulas strong{font:26px 'Bebas Neue',Impact,sans-serif}
+.aulas form{grid-column:1/-1}
+.aulas .botao{width:100%}
+
+.chamada-avisos{font-size:40px}
+.chamada-avisos em{display:block;font-style:normal;color:#e0161f}
+.mural{display:grid;gap:12px}
+.mural li{padding:14px 16px;border-radius:10px;background:#2a2a2a}
+.mural h3{font-size:20px}
+.mural small{display:block;margin-top:6px;font-size:12px;text-align:right;color:#9a9a9a}
+
+@media (min-width:768px){
+  .chamada-avisos{font-size:52px}
+  .evolucao-texto{padding-top:140px}
+  .aulas li{grid-template-columns:70px 1fr auto}
+  .aulas form{grid-column:auto}
+  .aulas .botao{width:auto}
+}
+@media (min-width:1100px){
+  .chamada-avisos{font-size:64px}
+  .colunas{grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+}

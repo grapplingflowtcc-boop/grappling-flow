@@ -1,0 +1,10 @@
+  <aside id="menu" class="drawer" aria-label="Menu">
+    <a class="logo" href="/aluno/dashboard"><img src="/imagem/logo.png" alt="">GRAPPLING <span>FLOW</span></a>
+    <nav aria-label="Menu principal">
+      <a href="/aluno/dashboard" <%- atual === 'dashboard' ? 'aria-current="page"' : '' %>>Dashboard</a>
+      <a href="/aluno/checkin" <%- atual === 'checkin' ? 'aria-current="page"' : '' %>>Fazer check-in</a>
+      <a href="/aluno/perfil" <%- atual === 'perfil' ? 'aria-current="page"' : '' %>>Perfil</a>
+      <a href="/aluno/avisos" <%- atual === 'avisos' ? 'aria-current="page"' : '' %>>Avisos</a>
+    </nav>
+    <a class="sair" href="/login">Sair</a>
+  </aside>

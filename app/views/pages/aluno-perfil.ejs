@@ -1,0 +1,18 @@
+<%- include('../partials/head', {titulo: 'Perfil do aluno', css: 'aluno', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Perfil do aluno'}) %>
+<%- include('../partials/' + 'menu-aluno', {atual: 'perfil'}) %>
+  <main class="painel">
+    <section class="cartao perfil-id"><span class="avatar-g">DA</span><div><h2>Daniel Alves</h2><p class="muted">Aluno Grappling Flow · Faixa azul</p></div></section>
+    <section class="cartao" aria-labelledby="t-dp"><h3 id="t-dp">Dados pessoais</h3>
+      <ul class="dados"><li><span>Nome completo</span><strong>Daniel Alves</strong></li><li><span>E-mail</span><strong>daniel@grapplingflow.com</strong></li><li><span>Telefone</span><strong>(11) 98742-6787</strong></li><li><span>Data de nascimento</span><strong>01/01/2000</strong></li></ul></section>
+    <section class="cartao" aria-labelledby="t-ia"><h3 id="t-ia">Informações da academia</h3>
+      <ul class="dados"><li><span>Modalidade</span><strong>Jiu-Jitsu Brasileiro</strong></li><li><span>Professor</span><strong>Denis Monteiro</strong></li><li><span>Faixa atual</span><strong>Faixa azul</strong></li><li><span>Última graduação</span><strong>15 de fevereiro de 2026</strong></li><li><span>Tempo de treinamento</span><strong>2 anos e 4 meses</strong></li><li><span>Data da matrícula</span><strong>12 de março de 2024</strong></li></ul></section>
+    <section class="cartao" aria-labelledby="t-gr"><h3 id="t-gr">Sua graduação</h3><div class="faixa-azul" role="img" aria-label="Faixa azul"></div>
+      <p><strong>Faixa azul</strong> · conquistada em 15 de fevereiro de 2026</p>
+      <div class="barra" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso"><span style="width:60%"></span></div></section>
+    <blockquote class="cartao frase">O progresso não acontece por acaso. Ele é construído todos os dias.</blockquote>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>

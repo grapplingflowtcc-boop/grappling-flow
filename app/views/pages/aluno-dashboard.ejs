@@ -1,0 +1,83 @@
+<%- include('../partials/head', {titulo: 'Dashboard do aluno', css: 'aluno', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Área do aluno'}) %>
+<%- include('../partials/menu-aluno', {atual: 'dashboard'}) %>
+  <main class="painel">
+      <p class="rotulo">seu espaço de evolução</p>
+      <h1 class="saudacao">Olá, Daniel<span class="vermelho">.</span></h1>
+      <p class="boas-vindas">Bem-vindo à sua área do aluno.</p>
+
+      <div class="colunas">
+        <div>
+          <section class="evolucao">
+            <div class="evolucao-texto">
+              <p class="evolucao-rotulo">minha evolução</p>
+              <h2>o próximo nível<br>é conquistado<span class="vermelho">.</span></h2>
+              <p>Cada treino é um passo à frente. Continue construindo a sua história no tatame.</p>
+            </div>
+            <div class="evolucao-progresso">
+              <div class="linha">
+                <p>faixa atual <strong>faixa azul</strong></p>
+                <p>próxima graduação <strong>faixa roxa</strong></p>
+              </div>
+              <div class="linha"><span>progresso para a próxima faixa</span><span>60%</span></div>
+              <div class="barra"><span style="width:60%"></span></div>
+              <div class="linha">
+                <span class="vermelho">● 2 anos e 4 meses de treino</span>
+                <span>● 128 aulas realizadas</span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p class="rotulo">seus números</p>
+            <h2 class="titulo-secao">Seu progresso em foco</h2>
+            <ul class="cartoes">
+              <li><span class="icone" aria-hidden="true">🥋</span><span>minha faixa</span><strong>FAIXA AZUL</strong><span class="detalhe">● em evolução</span></li>
+              <li><span class="icone" aria-hidden="true">⏱</span><span>tempo de academia</span><strong>2 anos e 4 meses</strong><span class="detalhe">● desde março de 2024</span></li>
+              <li><span class="icone" aria-hidden="true">🔥</span><span>aulas realizadas</span><strong>128 aulas</strong><span class="detalhe">● cada treino conta</span></li>
+              <li><span class="icone" aria-hidden="true">🎯</span><span>próxima graduação</span><strong>em andamento</strong><span class="detalhe">● rumo à faixa roxa</span></li>
+            </ul>
+          </section>
+        </div>
+
+        <div>
+          <section id="agenda">
+            <p class="rotulo">marque na agenda</p>
+            <h2 class="titulo-secao">próximo evento</h2>
+            <article class="evento">
+              <div class="evento-dia">18</div>
+              <div>
+                <span class="etiqueta">graduação</span>
+                <h3>próxima graduação</h3>
+                <p>O próximo capítulo da sua jornada começa aqui. Prepare-se para mostrar sua evolução.</p>
+                <p class="evento-local">09:00 às 12:00 · <span class="vermelho">Unidade Central</span></p>
+              </div>
+            </article>
+            <a class="ver-detalhes" href="/aluno/avisos">ver detalhes</a>
+          </section>
+
+          <section id="avisos">
+            <p class="rotulo">Fique por dentro</p>
+            <h2 class="titulo-secao">Avisos recentes</h2>
+            <ul>
+              <li class="aviso">
+                <span class="icone" aria-hidden="true">📅</span>
+                <div><h3>Seminário de Jiu-jitsu</h3><p>Participe do nosso próximo seminário especial. Vagas limitadas para aprender.</p></div>
+              </li>
+              <li class="aviso">
+                <span class="icone" aria-hidden="true">❗</span>
+                <div><h3>Alteração de horário</h3><p>Neste sábado teremos um horário diferente; confira a programação.</p></div>
+              </li>
+              <li class="aviso">
+                <span class="icone" aria-hidden="true">🥋</span>
+                <div><h3>Próxima avaliação de graduação</h3><p>A próxima avaliação está chegando. Prepare-se para o próximo passo na sua jornada.</p></div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>

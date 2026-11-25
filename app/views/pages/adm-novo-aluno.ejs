@@ -1,0 +1,53 @@
+<%- include('../partials/head', {titulo: 'Cadastrar aluno', css: 'adm', painel: true}) %>
+<% const d = dados || {}; const sel = (c, o) => (d[c] === o ? 'selected' : ''); %>
+<body>
+<%- include('../partials/topo', {titulo: 'Cadastrar aluno'}) %>
+<%- include('../partials/menu-adm', {atual: 'novo-aluno'}) %>
+  <main class="painel">
+    <section><h2>Cadastrar aluno</h2><p class="muted">Preencha os dados para matricular um novo aluno.</p></section>
+    <% if (cadastrado) { %><p class="alerta alerta--ok" role="status">Aluno cadastrado com sucesso.</p><% } %>
+    <% if (erros && erros.length) { %><div class="alerta alerta--erro" role="alert"><ul><% erros.forEach(function (m) { %><li><%= m %></li><% }) %></ul></div><% } %>
+    <section class="cartao form-aluno">
+      <form action="/adm/alunos/novo" method="post" data-validar novalidate>
+        <label for="n-nome">Nome completo</label>
+        <div class="campo"><input id="n-nome" name="nome" type="text" placeholder="Nome do aluno" value="<%= d.nome || '' %>" data-regra="nome"></div>
+        <p class="erro" id="n-nome-erro" aria-live="polite"></p>
+
+        <label for="n-email">E-mail</label>
+        <div class="campo"><input id="n-email" name="email" type="email" placeholder="aluno@email.com" value="<%= d.email || '' %>" data-regra="email"></div>
+        <p class="erro" id="n-email-erro" aria-live="polite"></p>
+
+        <label for="n-tel">Telefone</label>
+        <div class="campo"><input id="n-tel" name="telefone" type="tel" placeholder="(11) 90000-0000" value="<%= d.telefone || '' %>" data-regra="telefone"></div>
+        <p class="erro" id="n-tel-erro" aria-live="polite"></p>
+
+        <label for="n-nasc">Data de nascimento</label>
+        <div class="campo"><input id="n-nasc" name="nascimento" type="date" value="<%= d.nascimento || '' %>" data-regra="obrigatorio"></div>
+        <p class="erro" id="n-nasc-erro" aria-live="polite"></p>
+
+        <label for="n-mod">Modalidade</label>
+        <div class="campo"><select id="n-mod" name="modalidade" data-regra="obrigatorio"><option value="">Selecione</option><% ['Muay Thai','Jiu-Jitsu','Boxe','Karatê'].forEach(function (o) { %><option <%= sel('modalidade', o) %>><%= o %></option><% }) %></select></div>
+        <p class="erro" id="n-mod-erro" aria-live="polite"></p>
+
+        <label for="n-faixa">Graduação</label>
+        <div class="campo"><select id="n-faixa" name="faixa"><% ['Faixa branca','Faixa azul','Faixa roxa','Faixa marrom','Faixa preta'].forEach(function (o) { %><option <%= sel('faixa', o) %>><%= o %></option><% }) %></select></div>
+
+        <label for="n-plano">Plano</label>
+        <div class="campo"><select id="n-plano" name="plano" data-regra="obrigatorio"><option value="">Selecione</option><% ['1 modalidade · R$ 110,00','2 modalidades · R$ 160,00','Plano livre · R$ 210,00'].forEach(function (o) { %><option <%= sel('plano', o) %>><%= o %></option><% }) %></select></div>
+        <p class="erro" id="n-plano-erro" aria-live="polite"></p>
+
+        <label for="n-senha">Senha provisória</label>
+        <div class="campo">
+          <input id="n-senha" name="senha" type="password" autocomplete="new-password" data-regra="senha">
+          <button type="button" data-mostrar-senha="n-senha" aria-label="Mostrar senha">👁</button>
+        </div>
+        <p class="erro" id="n-senha-erro" aria-live="polite"></p>
+
+        <button class="botao-form" type="submit">Cadastrar aluno</button>
+      </form>
+    </section>
+  </main>
+<%- include('../partials/scripts') %>
+<script src="/js/validacao.js"></script>
+</body>
+</html>

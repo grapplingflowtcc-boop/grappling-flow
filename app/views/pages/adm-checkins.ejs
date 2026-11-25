@@ -1,0 +1,37 @@
+<%- include('../partials/head', {titulo: 'Registro de check-ins', css: 'adm', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Check-ins'}) %>
+<%- include('../partials/menu-adm', {atual: 'checkins'}) %>
+  <main class="painel">
+    <section><h2>Registro de check-ins</h2><p class="muted">Presenças registradas pelos alunos hoje.</p></section>
+
+    <section class="grade-cards" aria-label="Resumo de check-ins">
+      <article class="cartao"><p class="muted">Check-ins hoje</p><p class="numero">214</p></article>
+      <article class="cartao"><p class="muted">Presença</p><p class="numero">86%</p></article>
+      <article class="cartao"><p class="muted">Alunos ativos</p><p class="numero">248</p></article>
+    </section>
+
+    <section class="cartao" aria-labelledby="t-aula"><h3 id="t-aula">Check-ins por aula</h3>
+      <div class="tabela-wrap"><table>
+        <thead><tr><th scope="col">Horário</th><th scope="col">Aula</th><th scope="col">Check-ins</th></tr></thead>
+        <tbody>
+          <tr><td>07:00</td><td>Muay Thai</td><td>32</td></tr>
+          <tr><td>12:00</td><td>Jiu-Jitsu</td><td>41</td></tr>
+          <tr><td>18:00</td><td>Jiu-Jitsu</td><td>88</td></tr>
+          <tr><td>20:00</td><td>Boxe</td><td>53</td></tr>
+        </tbody></table></div></section>
+
+    <section class="cartao" aria-labelledby="t-reg"><h3 id="t-reg">Últimos registros</h3>
+      <div class="tabela-wrap"><table class="empilha">
+        <thead><tr><th scope="col">Hora</th><th scope="col">Aluno</th><th scope="col">Aula</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><td>19:52</td><td data-label="Aluno">Daniel Alves</td><td data-label="Aula">Jiu-Jitsu</td><td data-label="Status">Confirmado</td></tr>
+          <tr><td>19:48</td><td data-label="Aluno">Ana Reis</td><td data-label="Aula">Jiu-Jitsu</td><td data-label="Status">Confirmado</td></tr>
+          <tr><td>19:41</td><td data-label="Aluno">Paulo Dias</td><td data-label="Aula">Jiu-Jitsu</td><td data-label="Status">Confirmado</td></tr>
+          <tr><td>19:37</td><td data-label="Aluno">Lia Melo</td><td data-label="Aula">Jiu-Jitsu</td><td class="destaque" data-label="Status">Pendente</td></tr>
+          <tr><td>19:30</td><td data-label="Aluno">Caio Santos</td><td data-label="Aula">Jiu-Jitsu</td><td data-label="Status">Confirmado</td></tr>
+        </tbody></table></div></section>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>

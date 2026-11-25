@@ -1,0 +1,52 @@
+<%- include('../partials/head', {titulo: 'Financeiro', css: 'adm', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Financeiro'}) %>
+<%- include('../partials/menu-adm', {atual: 'financeiro'}) %>
+  <main class="painel">
+    <section><h2>Financeiro</h2><p class="muted">Resumo das mensalidades de novembro de 2026. Valores de exemplo.</p></section>
+
+    <section class="grade-cards" aria-label="Resumo financeiro">
+      <article class="cartao"><p class="muted">Alunos ativos</p><p class="numero">248</p></article>
+      <article class="cartao"><p class="muted">Receita prevista</p><p class="numero">R$ 35.180,00</p></article>
+      <article class="cartao"><p class="muted">Recebido</p><p class="numero">R$ 34.540,00</p></article>
+      <article class="cartao"><p class="muted">Em atraso (4 alunos)</p><p class="numero destaque">R$ 640,00</p></article>
+    </section>
+
+    <section class="cartao" aria-labelledby="t-rec"><h3 id="t-rec">Recebimento do mês</h3>
+      <div class="faixa"><span>R$ 34.540,00 de R$ 35.180,00</span><strong>98%</strong></div>
+      <div class="barra" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" aria-label="Percentual recebido"><span style="width:98%"></span></div></section>
+
+    <section class="cartao" aria-labelledby="t-calc"><h3 id="t-calc">Cálculo por plano</h3>
+      <div class="tabela-wrap"><table class="empilha">
+        <thead><tr><th scope="col">Plano</th><th scope="col">Alunos</th><th scope="col">Valor mensal</th><th scope="col">Subtotal</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1 modalidade</th><td data-label="Alunos">130</td><td data-label="Valor mensal">R$ 110,00</td><td data-label="Subtotal">R$ 14.300,00</td></tr>
+          <tr><th scope="row">2 modalidades</th><td data-label="Alunos">78</td><td data-label="Valor mensal">R$ 160,00</td><td data-label="Subtotal">R$ 12.480,00</td></tr>
+          <tr><th scope="row">Plano livre</th><td data-label="Alunos">40</td><td data-label="Valor mensal">R$ 210,00</td><td data-label="Subtotal">R$ 8.400,00</td></tr>
+        </tbody>
+        <tfoot><tr><th scope="row">Total</th><td data-label="Alunos">248</td><td>Ticket médio: R$ 141,86</td><td data-label="Subtotal">R$ 35.180,00</td></tr></tfoot>
+      </table></div></section>
+
+    <section class="cartao" aria-labelledby="t-atr"><h3 id="t-atr">Mensalidades em atraso</h3>
+      <div class="tabela-wrap"><table class="empilha">
+        <thead><tr><th scope="col">Aluno</th><th scope="col">Plano</th><th scope="col">Vencimento</th><th scope="col">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Bruno Costa</td><td data-label="Plano">2 modalidades</td><td data-label="Vencimento">05/11/2026</td><td class="destaque" data-label="Valor">R$ 160,00</td></tr>
+          <tr><td>Paulo Dias</td><td data-label="Plano">2 modalidades</td><td data-label="Vencimento">05/11/2026</td><td class="destaque" data-label="Valor">R$ 160,00</td></tr>
+          <tr><td>Lia Melo</td><td data-label="Plano">2 modalidades</td><td data-label="Vencimento">10/11/2026</td><td class="destaque" data-label="Valor">R$ 160,00</td></tr>
+          <tr><td>Rafael Nunes</td><td data-label="Plano">2 modalidades</td><td data-label="Vencimento">10/11/2026</td><td class="destaque" data-label="Valor">R$ 160,00</td></tr>
+        </tbody></table></div></section>
+
+    <section class="cartao" aria-labelledby="t-pag"><h3 id="t-pag">Últimos pagamentos</h3>
+      <div class="tabela-wrap"><table class="empilha">
+        <thead><tr><th scope="col">Aluno</th><th scope="col">Plano</th><th scope="col">Forma</th><th scope="col">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Ana Reis</td><td data-label="Plano">Plano livre</td><td data-label="Forma">Pix</td><td data-label="Valor">R$ 210,00</td></tr>
+          <tr><td>Daniel Alves</td><td data-label="Plano">1 modalidade</td><td data-label="Forma">Cartão</td><td data-label="Valor">R$ 110,00</td></tr>
+          <tr><td>Marina Lopes</td><td data-label="Plano">2 modalidades</td><td data-label="Forma">Pix</td><td data-label="Valor">R$ 160,00</td></tr>
+          <tr><td>Caio Santos</td><td data-label="Plano">1 modalidade</td><td data-label="Forma">Boleto</td><td data-label="Valor">R$ 110,00</td></tr>
+        </tbody></table></div></section>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>

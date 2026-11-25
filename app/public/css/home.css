@@ -1,0 +1,59 @@
+.cabecalho{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;gap:10px;padding:14px 16px}
+.cabecalho .logo{margin-right:auto}
+.cabecalho nav{display:none;gap:8px}
+
+.hero{position:relative;display:flex;align-items:center;min-height:560px;padding:110px 20px 56px;background:#0d0d0d url(/imagem/hero.jpg) 35% 40%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,13,.95) 0,rgba(13,13,13,.72) 45%,rgba(13,13,13,.3) 100%),linear-gradient(0deg,#0d0d0d 0,transparent 25%)}
+.hero-conteudo{position:relative;z-index:1;width:100%;max-width:1100px;margin:0 auto}
+.hero-tag{font-size:11px;font-weight:600;letter-spacing:.12em;color:#e0161f}
+.hero h1{margin:14px 0 24px;font-size:64px;line-height:.95;text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.hero-botoes{display:flex;flex-wrap:wrap;gap:8px}
+
+.estatisticas{display:flex;flex-wrap:wrap;justify-content:center;gap:24px 40px;padding:28px 16px;border-bottom:1px solid #2e2e2e;text-align:center}
+.estatisticas strong{display:block;font:28px 'Bebas Neue',Impact,sans-serif;letter-spacing:.03em}
+.estatisticas span{font-size:12px;color:#9a9a9a}
+
+.secao{padding:48px 0;border-bottom:1px solid #2e2e2e}
+.secao h2,.chamada h2{margin-bottom:12px;font-size:40px;line-height:1.05}
+.descricao{max-width:320px;font-size:14px;color:#ccc}
+
+.modalidades{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.modalidade{display:flex;flex-direction:column;justify-content:space-between;height:170px;padding:12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;text-shadow:0 1px 6px #000;transition:transform .2s ease}
+.modalidade:hover{transform:translateY(-4px)}
+.modalidade h3{padding-bottom:6px;border-bottom:1px solid #fff;font-size:22px}
+.muay-thai{background:linear-gradient(180deg,rgba(13,13,13,.7),rgba(13,13,13,.45) 40%,rgba(13,13,13,.92)),url(/imagem/muay-thai.jpg) center/cover}
+.jiu-jitsu{background:linear-gradient(180deg,rgba(13,13,13,.7),rgba(13,13,13,.45) 40%,rgba(13,13,13,.92)),url(/imagem/jiu-jitsu.jpg) center/cover}
+.boxe{background:linear-gradient(180deg,rgba(13,13,13,.7),rgba(13,13,13,.45) 40%,rgba(13,13,13,.92)),url(/imagem/boxe.jpg) center/cover}
+.karate{background:linear-gradient(180deg,rgba(13,13,13,.7),rgba(13,13,13,.45) 40%,rgba(13,13,13,.92)),url(/imagem/karate.jpg) center/cover}
+
+.tabela{margin-top:32px}
+.tabela table{min-width:640px}
+th:first-child{padding-left:20px;text-align:left}
+
+.chamada{padding:56px 20px;background:#e0161f;text-align:center}
+.chamada p{max-width:360px;margin:0 auto 22px;font-size:14px}
+.chamada small{display:block;margin-top:16px;font-size:12px}
+
+.rodape{padding:40px 0 20px}
+.rodape-colunas{display:grid;grid-template-columns:1fr 1fr;gap:24px;font-size:13px;color:#9a9a9a}
+.rodape-marca{grid-column:1/-1}
+.rodape h3{margin-bottom:8px;font-size:15px;letter-spacing:.06em;color:#fff}
+.rodape li{margin-bottom:4px}
+.rodape-marca p{max-width:200px;margin-top:8px}
+.copyright{margin-top:28px;padding-top:16px;border-top:1px solid #2e2e2e;font-size:12px;color:#666}
+
+@media (min-width:768px){
+  .cabecalho{padding:20px 32px}
+  .cabecalho nav{display:flex}
+  .hero{min-height:620px;padding:120px 32px 60px;background:#0d0d0d url(/imagem/hero.jpg) right center/auto 100% no-repeat}
+  .hero::after{background:linear-gradient(90deg,rgba(13,13,13,.95) 0,rgba(13,13,13,.72) 30%,rgba(13,13,13,.2) 100%),linear-gradient(0deg,#0d0d0d 0,transparent 25%)}
+  .hero h1{font-size:90px}
+  .modalidades{grid-template-columns:repeat(4,1fr)}
+  .rodape-colunas{grid-template-columns:2fr 1fr 1fr 1fr}
+  .rodape-marca{grid-column:auto}
+}
+@media (min-width:1100px){
+  .hero h1{font-size:110px}
+  .secao h2,.chamada h2{font-size:52px}
+  .modalidade{height:220px}
+}

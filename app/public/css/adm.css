@@ -1,0 +1,10 @@
+.freq{display:flex;align-items:flex-end;gap:10px;height:200px;padding-top:12px}
+.freq div{display:flex;flex:1;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;height:100%;font-size:12px}
+.freq span{width:100%;max-width:34px;border-radius:6px 6px 0 0;background:linear-gradient(#ff3a2e,#8e140d)}
+.lista-treinos li{display:flex;gap:16px;padding:10px 0;border-bottom:1px solid #2e2e2e}
+.lista-treinos strong{min-width:64px;font:24px 'Bebas Neue',Impact,sans-serif}
+.adm-id{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+.selo{padding:2px 8px;border:1px solid #e0161f;border-radius:4px;font-size:11px;font-weight:600;color:#e0161f}
+.agenda li{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid #2e2e2e}
+.agenda strong{font-weight:600}
+.form-aluno{max-width:560px}

@@ -1,0 +1,14 @@
+<%- include('../partials/head', {titulo: 'Perfil do administrador', css: 'adm', painel: true}) %>
+<body>
+<%- include('../partials/topo', {titulo: 'Perfil do administrador'}) %>
+<%- include('../partials/' + 'menu-adm', {atual: 'perfil'}) %>
+  <main class="painel">
+    <section class="cartao adm-id"><span class="avatar-g">DA</span><div><h2>Daniel Alvez</h2><p class="muted">adm@grapplingflow.com</p></div><span class="selo">ADMIN</span></section>
+    <section class="cartao" aria-labelledby="t-ip"><h3 id="t-ip">Informações pessoais</h3>
+      <ul class="dados"><li><span>Nome</span><strong>Daniel Alvez</strong></li><li><span>E-mail</span><strong>adm@grapplingflow.com</strong></li><li><span>Telefone</span><strong>(11) 99999-0000</strong></li><li><span>CPF</span><strong>***.***.***-00</strong></li></ul></section>
+    <section class="cartao" aria-labelledby="t-td"><h3 id="t-td">Treinos do dia</h3>
+      <ul class="agenda"><li><strong>07:00</strong><span>Jiu-Jitsu · <span class="destaque">Iniciante</span></span></li><li><strong>12:45</strong><span>Jiu-Jitsu · <span class="destaque">Intermediário</span></span></li><li><strong>18:00</strong><span>Boxe · <span class="destaque">Intermediário</span></span></li><li><strong>20:00</strong><span>Muay Thai · <span class="destaque">Avançado</span></span></li></ul></section>
+  </main>
+<%- include('../partials/scripts') %>
+</body>
+</html>
