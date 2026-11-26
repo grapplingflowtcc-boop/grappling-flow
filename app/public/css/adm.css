@@ -61,19 +61,31 @@
 .form-aluno {
   max-width: 560px;
 }
-.form-aluno input[type="date"] {
+.form-aluno .campo input[type="date"] {
+  display: block;
   -webkit-appearance: none;
   appearance: none;
+  box-sizing: border-box;
+  width: 100%;
   min-width: 0;
   max-width: 100%;
-  text-align: left;
-  line-height: 42px;
-}
-.form-aluno input[type="date"]::-webkit-date-and-time-value {
-  text-align: left;
-  min-height: 1.2em;
-}
-.form-aluno input[type="date"]::-webkit-calendar-picker-indicator {
+  height: 42px;
+  min-height: 42px;
+  padding: 0 12px;
   margin: 0;
+  text-align: left;
+  overflow: hidden;
+}
+.form-aluno .campo input[type="date"]::-webkit-date-and-time-value {
+  min-height: 1.2em;
+  margin: 0;
+  text-align: left;
+}
+.form-aluno .campo input[type="date"]::-webkit-datetime-edit {
+  padding: 0;
+  min-width: 0;
+}
+.form-aluno .campo input[type="date"]::-webkit-calendar-picker-indicator {
+  margin: 0 0 0 8px;
   padding: 0;
 }
