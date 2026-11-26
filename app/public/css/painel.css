@@ -1,59 +1,263 @@
-.topo{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #2e2e2e;background:rgba(10,10,10,.96)}
-.topo h1{flex:1;font:600 16px 'Inter',system-ui,sans-serif;letter-spacing:0}
-.avatar{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:#e0161f;font:20px 'Bebas Neue',Impact,sans-serif}
-
-main.painel{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;max-width:1100px;margin:0 auto;padding:16px 16px 56px}
-.painel>*{min-width:0}
-.painel h2{font-size:clamp(28px,8.5vw,34px);line-height:1.05}
-.cartao{min-width:0;padding:16px;border:1px solid #2e2e2e;border-radius:12px;background:linear-gradient(160deg,#2c2c2c,#1c1c1c);transition:transform .2s ease,border-color .2s ease}
-.cartao:hover{border-color:#e0161f;transform:translateY(-2px)}
-.cartao h3{margin-bottom:10px;font-size:22px}
-.cartao .tabela-wrap{border:0;-webkit-overflow-scrolling:touch}
-.painel table{min-width:0}
-.painel table.larga{min-width:520px}
-.painel th,.painel td{padding:11px 6px;font-size:12px;overflow-wrap:break-word}
-.painel thead th{font-size:15px;line-height:1.1}
-.painel table.larga th,.painel table.larga td{overflow-wrap:normal;white-space:nowrap}
-@media (max-width:599px){
-  .painel table.empilha,.empilha tbody,.empilha tfoot,.empilha tr{display:block}
-  .empilha thead{position:absolute;left:-9999px}
-  .empilha tr{padding:10px 4px;border-bottom:1px solid #2e2e2e}
-  .empilha tbody tr:last-child{border-bottom:0}
-  .empilha td,.empilha th{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:4px 0;border:0;font-size:13px;text-align:right}
-  .empilha tr>:first-child{padding-bottom:6px;font:600 15px 'Inter',system-ui,sans-serif;text-align:left}
-  .empilha [data-label]::before{content:attr(data-label);flex-shrink:0;font-size:11px;text-align:left;text-transform:uppercase;letter-spacing:.04em;color:#9a9a9a}
-  .empilha td:not([data-label]):not(:first-child){justify-content:flex-end}
-  .empilha tfoot tr{border-top:2px solid #e0161f;border-bottom:0}
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #2e2e2e;
+  background: rgba(10, 10, 10, 0.96);
 }
-.grade-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.grade-cards>:last-child:nth-child(odd){grid-column:1/-1}
-.grade-cards .cartao{padding:14px}
-.grade-cards .muted{font-size:12px;line-height:1.3}
-.numero{margin-top:4px;font:28px/1.1 'Bebas Neue',Impact,sans-serif;overflow-wrap:break-word}
-.faixa{display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px}
-.barra{height:8px;overflow:hidden;border-radius:99px;background:#333}
-.barra>span{display:block;height:100%;background:#e0161f}
-ul.dados{display:grid;grid-template-columns:1fr;gap:14px}
-.dados li{display:flex;flex-direction:column}
-.dados span{font-size:11px;color:#9a9a9a}
-.dados strong{font-weight:600}
-.avatar-g{display:grid;place-items:center;flex-shrink:0;width:64px;height:64px;border:3px solid #e0161f;border-radius:50%;font:26px 'Bebas Neue',Impact,sans-serif}
-
-@media (min-width:768px){
-  .topo{padding:12px 32px}
-  .painel th,.painel td{padding:14px 10px;font-size:13px}
-  .painel thead th{font-size:18px}
-  .grade-cards .cartao{padding:20px}
-  .grade-cards .muted{font-size:inherit}
-  .numero{font-size:32px}
-  main.painel{gap:24px;padding:24px 32px 64px}
-  .cartao{padding:20px}
-  .grade-cards{gap:12px}
-  ul.dados{grid-template-columns:repeat(2,1fr)}
+.topo h1 {
+  flex: 1;
+  font:
+    600 16px "Inter",
+    system-ui,
+    sans-serif;
+  letter-spacing: 0;
 }
-@media (min-width:1100px){
-  .painel h2{font-size:44px}
-  .grade-cards{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-  .grade-cards>:last-child:nth-child(odd){grid-column:auto}
-  ul.dados{grid-template-columns:repeat(3,1fr)}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e0161f;
+  font:
+    20px "Bebas Neue",
+    Impact,
+    sans-serif;
+}
+
+main.painel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 16px 56px;
+}
+.painel > * {
+  min-width: 0;
+}
+.painel h2 {
+  font-size: clamp(28px, 8.5vw, 34px);
+  line-height: 1.05;
+}
+.cartao {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #2e2e2e;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #2c2c2c, #1c1c1c);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.cartao:hover {
+  border-color: #e0161f;
+  transform: translateY(-2px);
+}
+.cartao h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.cartao .tabela-wrap {
+  border: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.painel table {
+  min-width: 0;
+}
+.painel table.larga {
+  min-width: 520px;
+}
+.painel th,
+.painel td {
+  padding: 11px 6px;
+  font-size: 12px;
+  overflow-wrap: break-word;
+}
+.painel thead th {
+  font-size: 15px;
+  line-height: 1.1;
+}
+.painel table.larga th,
+.painel table.larga td {
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+@media (max-width: 599px) {
+  .painel table.empilha,
+  .empilha tbody,
+  .empilha tfoot,
+  .empilha tr {
+    display: block;
+  }
+  .empilha thead {
+    position: absolute;
+    left: -9999px;
+  }
+  .empilha tr {
+    padding: 10px 4px;
+    border-bottom: 1px solid #2e2e2e;
+  }
+  .empilha tbody tr:last-child {
+    border-bottom: 0;
+  }
+  .empilha td,
+  .empilha th {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 4px 0;
+    border: 0;
+    font-size: 13px;
+    text-align: right;
+  }
+  .empilha tr > :first-child {
+    padding-bottom: 6px;
+    font:
+      600 15px "Inter",
+      system-ui,
+      sans-serif;
+    text-align: left;
+  }
+  .empilha [data-label]::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-size: 11px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #9a9a9a;
+  }
+  .empilha td:not([data-label]):not(:first-child) {
+    justify-content: flex-end;
+  }
+  .empilha tfoot tr {
+    border-top: 2px solid #e0161f;
+    border-bottom: 0;
+  }
+}
+.grade-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.grade-cards > :last-child:nth-child(odd) {
+  grid-column: 1/-1;
+}
+.grade-cards .cartao {
+  padding: 14px;
+}
+.grade-cards .muted {
+  font-size: 12px;
+  line-height: 1.3;
+}
+.numero {
+  margin-top: 4px;
+  font:
+    28px/1.1 "Bebas Neue",
+    Impact,
+    sans-serif;
+  overflow-wrap: break-word;
+}
+.faixa {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.barra {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #333;
+}
+.barra > span {
+  display: block;
+  height: 100%;
+  background: #e0161f;
+}
+ul.dados {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.dados li {
+  display: flex;
+  flex-direction: column;
+}
+.dados span {
+  font-size: 11px;
+  color: #9a9a9a;
+}
+.dados strong {
+  font-weight: 600;
+}
+.avatar-g {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border: 3px solid #e0161f;
+  border-radius: 50%;
+  font:
+    26px "Bebas Neue",
+    Impact,
+    sans-serif;
+}
+
+@media (min-width: 768px) {
+  .topo {
+    padding: 12px 32px;
+  }
+  .painel th,
+  .painel td {
+    padding: 14px 10px;
+    font-size: 13px;
+  }
+  .painel thead th {
+    font-size: 18px;
+  }
+  .grade-cards .cartao {
+    padding: 20px;
+  }
+  .grade-cards .muted {
+    font-size: inherit;
+  }
+  .numero {
+    font-size: 32px;
+  }
+  main.painel {
+    gap: 24px;
+    padding: 24px 32px 64px;
+  }
+  .cartao {
+    padding: 20px;
+  }
+  .grade-cards {
+    gap: 12px;
+  }
+  ul.dados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .painel h2 {
+    font-size: 44px;
+  }
+  .grade-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .grade-cards > :last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+  ul.dados {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

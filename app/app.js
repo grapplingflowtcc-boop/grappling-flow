@@ -13,4 +13,6 @@ app.use("/", router);
 app.use((req, res) => res.status(404).render("pages/404"));
 
 const porta = process.env.PORT || 3000;
-app.listen(porta, () => console.log("Grappling Flow em http://localhost:" + porta));
+app.listen(porta, () =>
+  console.log("Grappling Flow em http://localhost:" + porta),
+);
